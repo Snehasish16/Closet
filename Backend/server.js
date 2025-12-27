@@ -4,6 +4,7 @@ const connectDB = require('./config/mongodb.js');
 const connectCloudinary = require('./config/cloudinary.js');
 const userRouter = require('./routes/userRoute.js');
 const productRouter = require('./routes/productRoute.js');
+const cartRouter = require('./routes/cartRoute.js');
 
 require('dotenv/config');
 
@@ -20,6 +21,7 @@ connectCloudinary();
  //api Endpoints
  app.use('/api/user',userRouter)
  app.use('/api/product',productRouter)
+ app.use('/api/cart',cartRouter)
 
  app.listen(port,()=>{
     console.log(`server started at http://localhost:${port}`)
